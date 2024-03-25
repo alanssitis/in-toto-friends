@@ -10,7 +10,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac
       - name: Set up Python
-        uses: actions/setup-python@61a6322f88396a6271a6ee3565807d608ecaddd1
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
@@ -22,7 +22,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Create PR
-        uses: peter-evans/create-pull-request@153407881ec5c347639a548ade7d8ad1d6740e38
+        uses: peter-evans/create-pull-request@v6
         with:
           commit-message: Regenerate dependents report
           title: Regenerate dependents report
